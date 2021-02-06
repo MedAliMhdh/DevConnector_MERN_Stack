@@ -2,12 +2,11 @@ const express = require("express");
 const connectDB = require("./config/db");
 const app = express();
 
+const PORT = process.env.PORT || 5000;
 connectDB();
 
 //Body parser Middlewareù
 app.use(express.json({ extended: false }));
-
-const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
   res.send("API is running");
